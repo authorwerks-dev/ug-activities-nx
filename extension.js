@@ -1,4 +1,4 @@
-//    ugactivitynx
+//    ug-activities-nx
 //    GNOME Shell extension
 //
 //    Adds the distribution logo to the top bar's Activities button.
@@ -51,7 +51,7 @@ function fileGicon(path) {
     return file.query_exists(null) ? new Gio.FileIcon({ file }) : null;
 }
 
-export default class UgActivityNxExtension extends Extension {
+export default class UgActivitiesNxExtension extends Extension {
     enable() {
         this._settings = this.getSettings();
 
@@ -71,20 +71,20 @@ export default class UgActivityNxExtension extends Extension {
             return;
         }
         this._button.remove_child(this._dots);
-        this._dots.add_style_class_name('ugactivitynx-dots');
+        this._dots.add_style_class_name('ug-activities-nx-dots');
 
         this._box = new St.BoxLayout({
-            style_class: 'ugactivitynx-box',
+            style_class: 'ug-activities-nx-box',
             y_align: Clutter.ActorAlign.CENTER,
         });
 
         this._icon = new St.Icon({
-            style_class: 'ugactivitynx-logo',
+            style_class: 'ug-activities-nx-logo',
             y_align: Clutter.ActorAlign.CENTER,
         });
 
         this._label = new St.Label({
-            style_class: 'ugactivitynx-label',
+            style_class: 'ug-activities-nx-label',
             text: shellGettext('Activities'),
             y_align: Clutter.ActorAlign.CENTER,
         });
@@ -93,6 +93,8 @@ export default class UgActivityNxExtension extends Extension {
         this._box.add_child(this._label);
         this._box.add_child(this._dots);
         this._button.add_child(this._box);
+        // Lets the stylesheet trim the button's own side padding.
+        this._button.add_style_class_name('ug-activities-nx-button');
 
         this._settings.connectObject('changed', () => this._sync(), this);
         this._sync();
@@ -118,9 +120,10 @@ export default class UgActivityNxExtension extends Extension {
         if (this._box) {
             // Put the workspace dots back exactly as gnome-shell had them.
             this._box.remove_child(this._dots);
-            this._dots.remove_style_class_name('ugactivitynx-dots');
+            this._dots.remove_style_class_name('ug-activities-nx-dots');
             this._dots.visible = true;
             this._button.add_child(this._dots);
+            this._button.remove_style_class_name('ug-activities-nx-button');
             this._box.destroy();
         }
 

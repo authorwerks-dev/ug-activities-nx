@@ -1,4 +1,4 @@
-//    ugactivitynx preferences
+//    ug-activities-nx preferences
 
 import Adw from 'gi://Adw';
 import Gio from 'gi://Gio';
@@ -6,7 +6,7 @@ import Gtk from 'gi://Gtk';
 
 import { ExtensionPreferences } from 'resource:///org/gnome/Shell/Extensions/js/extensions/prefs.js';
 
-export default class UgActivityNxPreferences extends ExtensionPreferences {
+export default class UgActivitiesNxPreferences extends ExtensionPreferences {
     fillPreferencesWindow(window) {
         const settings = this.getSettings();
 

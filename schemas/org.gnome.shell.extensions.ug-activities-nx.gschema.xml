@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <schemalist>
-  <schema id="org.gnome.shell.extensions.ugactivitynx" path="/org/gnome/shell/extensions/ugactivitynx/">
+  <schema id="org.gnome.shell.extensions.ug-activities-nx" path="/org/gnome/shell/extensions/ug-activities-nx/">
     <key name="custom-icon-path" type="s">
       <default>''</default>
       <summary>Custom logo file</summary>
       <description>Path to an image (SVG/PNG) to use as the logo. Leave empty to detect the distribution logo automatically from /etc/os-release and the icon theme.</description>
     </key>
     <key name="symbolic-icon" type="b">
-      <default>false</default>
+      <default>true</default>
       <summary>Prefer symbolic logo</summary>
       <description>Prefer a monochrome (-symbolic) variant of the distribution logo, which follows the top bar's text colour. Ignored when a custom logo file is set.</description>
     </key>
     <key name="icon-size" type="i">
       <range min="0" max="64"/>
-      <default>0</default>
+      <default>24</default>
       <summary>Logo size in pixels</summary>
       <description>Size of the logo. 0 matches the top bar's font size (1em), as in Red Hat's patch.</description>
     </key>
     <key name="show-workspace-dots" type="b">
-      <default>true</default>
+      <default>false</default>
       <summary>Show workspace indicator dots</summary>
       <description>Keep GNOME's workspace indicator dots next to the logo.</description>
     </key>
     <key name="show-label" type="b">
-      <default>false</default>
+      <default>true</default>
       <summary>Show "Activities" label</summary>
       <description>Show the text "Activities" next to the logo, as the button looked before GNOME 45 (and in Red Hat's original patch).</description>
     </key>

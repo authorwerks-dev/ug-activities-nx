@@ -1,4 +1,4 @@
-NAME = ugactivitynx
+NAME = ug-activities-nx
 UUID = $(NAME)@authorwerks-dev
 
 .PHONY: build install schemas test-shell test-prefs remove clean
