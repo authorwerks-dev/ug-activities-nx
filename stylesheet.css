@@ -1,0 +1,27 @@
+/* ugactivitynx — based on the .panel-logo-icon rule from Red Hat's
+   0001-panel-add-an-icon-to-the-ActivitiesButton.patch:
+       .panel-logo-icon { padding-right: .4em; icon-size: 1em; }
+   Spacing between logo, label and dots is done on the wrapper box instead of
+   padding on the icon, so nothing dangles when the dots are hidden. */
+
+/* gnome-shell styles every StBoxLayout inside #panelActivities with padding
+   and 5px spacing (meant for the workspace-dot box). Override it for our
+   wrapper so the dots box keeps its own padding but we don't double it. */
+#panelActivities .ugactivitynx-box {
+    padding: 0 0.4em;
+    spacing: 0.4em;
+}
+
+/* The dots box keeps gnome-shell's padding normally; inside our wrapper the
+   wrapper already provides the outer padding. */
+#panelActivities .ugactivitynx-box .ugactivitynx-dots {
+    padding: 0;
+}
+
+#panelActivities .ugactivitynx-logo {
+    icon-size: 1em;
+}
+
+#panelActivities .ugactivitynx-label {
+    font-weight: bold;
+}

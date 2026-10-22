@@ -1,0 +1,12 @@
+{
+  "name": "ugactivitynx",
+  "description": "Adds the distribution logo to the Activities button (workspace pill) in the top bar. Re-implements Red Hat's gnome-shell patch \"panel: add an icon to the ActivitiesButton\" as a toggleable extension, so the shell itself doesn't need patching.",
+  "uuid": "ugactivitynx@authorwerks-dev",
+  "url": "https://github.com/authorwerks-dev/ugactivitynx",
+  "settings-schema": "org.gnome.shell.extensions.ugactivitynx",
+  "shell-version": [
+    "49",
+    "50"
+  ],
+  "version": 1
+}
